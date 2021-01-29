@@ -1,5 +1,15 @@
 import React from 'react'
+import Header from './components/Header/Header'
+import Navbar from './components/Navbar/Navbar'
+import Profile from './components/Profile/Profile'
+import './App.css'
 
 export const App = () => {
-  return <div></div>
+  return (
+    <div className='app-wrapper'>
+      <Header />
+      <Navbar />
+      <Profile />
+    </div>
+  )
 }
