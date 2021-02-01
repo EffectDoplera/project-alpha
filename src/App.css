@@ -8,20 +8,6 @@
   grid-template-columns: 2fr 10fr;
 }
 
-.header {
-  grid-area: header;
-  background-color: lightgreen;
-}
-
-.header img {
-  width: 60px;
-}
-
-.nav {
-  grid-area: nav;
-  background-color: burlywood;
-}
-
 .content {
   grid-area: content;
   background-color: cornflowerblue;
