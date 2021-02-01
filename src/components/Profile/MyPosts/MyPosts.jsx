@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { StateContext } from './../../../redux/StateContext'
 import Post from './Post/Post'
 
 import classes from './MyPosts.module.css'
 
 const MyPosts = () => {
+  const { posts } = useContext(StateContext)
+
   return (
     <div className={classes.postsBlock}>
       <h3>My posts</h3>
@@ -14,9 +17,9 @@ const MyPosts = () => {
         <button>Add post</button>
       </div>
       <div className={classes.posts}>
-        <Post message='Test1' />
-        <Post message='Test2' />
-        <Post message='Test3' />
+        {posts.map((post) => (
+          <Post key={post.id} {...post} />
+        ))}
       </div>
     </div>
   )
