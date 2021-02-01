@@ -5,10 +5,15 @@ import classes from './MyPosts.module.css'
 
 const MyPosts = () => {
   return (
-    <div>
+    <div className={classes.postsBlock}>
       <h3>My posts</h3>
-      <div>New post</div>
       <div>
+        <textarea name='post' id='post' cols='30' rows='10'></textarea>
+      </div>
+      <div>
+        <button>Add post</button>
+      </div>
+      <div className={classes.posts}>
         <Post message='Test1' />
         <Post message='Test2' />
         <Post message='Test3' />
