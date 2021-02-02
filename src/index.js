@@ -1,17 +1,23 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import { hot } from 'react-hot-loader/root';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 
-import { App } from './App'
-import { StateContext } from './redux/StateContext'
-import state from './redux/state'
+import App from './App';
 
-import './index.css'
+import store from './store';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <StateContext.Provider value={state}>
-      <App />
-    </StateContext.Provider>
-  </React.StrictMode>,
-  document.getElementById('root')
-)
+import 'antd/dist/antd.css';
+import './index.css';
+
+const AppWithStore = () => (
+  <Provider store={store}>
+    <App />
+  </Provider>
+);
+
+const Hot = hot(AppWithStore);
+
+const Root = process.env.NODE_ENV === 'production' ? AppWithStore : Hot;
+
+ReactDOM.render(<Root />, document.getElementById('root'));

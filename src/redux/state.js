@@ -1,4 +1,4 @@
-import { generate } from 'shortid'
+import { generate } from 'shortid';
 
 const state = {
   posts: [
@@ -18,6 +18,10 @@ const state = {
     { id: generate(), message: 'Lorem ipsum dolor sit amet.' },
     { id: generate(), message: 'Lorem, ipsum.' },
   ],
-}
+};
 
-export default state
+export const addPost = (postMessage) => {
+  state.posts.push({ id: generate(), message: postMessage, likeCounts: 0 });
+};
+
+export default state;

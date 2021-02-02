@@ -1,20 +1,29 @@
-import React, { useContext } from 'react'
-import { StateContext } from './../../../redux/StateContext'
-import Post from './Post/Post'
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Button } from 'antd';
+import Post from './Post/Post';
 
-import classes from './MyPosts.module.css'
+import classes from './MyPosts.module.css';
 
 const MyPosts = () => {
-  const { posts } = useContext(StateContext)
+  const dispatch = useDispatch();
+  debugger;
+  const posts = useSelector((state) => state.dialogs.posts);
+
+  const newPostElement = React.createRef();
+
+  const addPost = () => {
+    dispatch({ type: 'ADD_POST', payload: { message: newPostElement.current.value } });
+  };
 
   return (
     <div className={classes.postsBlock}>
       <h3>My posts</h3>
       <div>
-        <textarea name='post' id='post' cols='30' rows='10'></textarea>
+        <textarea ref={newPostElement} name="post" id="post" cols="30" rows="10"></textarea>
       </div>
       <div>
-        <button>Add post</button>
+        <Button onClick={addPost}>Add post</Button>
       </div>
       <div className={classes.posts}>
         {posts.map((post) => (
@@ -22,7 +31,7 @@ const MyPosts = () => {
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default MyPosts
+export default MyPosts;
