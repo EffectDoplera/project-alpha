@@ -1,19 +1,18 @@
-import React, { useContext } from 'react'
-import Dialog from './Dialog/Dialog'
-import Message from './Message/Message'
-import { StateContext } from './../../redux/StateContext'
+import React from 'react';
+import { useSelector } from 'react-redux';
+import Contacts from './Contacts/Cotacts';
+import Dialog from './Dialog/Dialog';
+import Message from './Message/Message';
 
-import classes from './Dialogs.module.css'
+import classes from './Dialogs.module.css';
 
 const Dialogs = () => {
-  const { dialogs, messages } = useContext(StateContext)
+  const { messages, dialogs } = useSelector((state) => state.dialogs);
 
   return (
     <div className={classes.dialogs}>
       <div className={classes.dialogItems}>
-        {dialogs.map((dialog) => (
-          <Dialog key={dialog.id} {...dialog} />
-        ))}
+        <Contacts contacts={dialogs} />
       </div>
       <div className={classes.messages}>
         {messages.map((message) => (
@@ -21,7 +20,7 @@ const Dialogs = () => {
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Dialogs
+export default Dialogs;

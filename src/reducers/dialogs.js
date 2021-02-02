@@ -1,20 +1,22 @@
-import { ADD_POST, UPDATE_NEW_POST_TEXT } from './../actions/posts';
 import { generate } from 'shortid';
 
 const initialState = {
-  posts: [
-    { id: generate(), message: 'Hi', likeCounts: 12 },
-    { id: generate(), message: 'Lorem ipsum dolor sit amet.', likeCounts: 11 },
-    { id: generate(), message: 'Lorem, ipsum.', likeCounts: 5 },
+  dialogs: [
+    { id: generate(), name: 'Misha' },
+    { id: generate(), name: 'Vova' },
+    { id: generate(), name: 'Sasha' },
+    { id: generate(), name: 'Andrey' },
+    { id: generate(), name: 'Masha' },
+  ],
+  messages: [
+    { id: generate(), message: 'Hi' },
+    { id: generate(), message: 'Lorem ipsum dolor sit amet.' },
+    { id: generate(), message: 'Lorem, ipsum.' },
   ],
 };
 
 const dialogsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_POST:
-      return { ...state, posts: [...state.posts, action.payload] };
-    case UPDATE_NEW_POST_TEXT:
-      return { ...state };
     default:
       return state;
   }
