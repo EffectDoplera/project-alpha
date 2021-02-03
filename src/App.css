@@ -1,0 +1,13 @@
+.app-wrapper {
+  display: grid;
+
+  grid-template:
+  "header header"
+  "side content";
+  grid-template-rows: 60px 1fr;
+  grid-template-columns: 2fr 10fr;
+}
+
+.content {
+  grid-area: content;
+}
