@@ -1,3 +1,4 @@
 .side {
   grid-area: side;
+  min-height: 100vh;
 }

@@ -2,7 +2,6 @@ import React from 'react';
 import { Route, BrowserRouter as Router } from 'react-router-dom';
 import { Layout } from 'antd';
 
-import Header from './components/Header/Header';
 import Sidebar from './components/Sidebar/Sidebar';
 import Profile from './components/Profile/Profile';
 import Dialogs from './components/Dialogs/Dialogs';
@@ -11,27 +10,28 @@ import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 
 import './App.css';
+import Users from './components/Users/Users';
+import MainLayout from './layouts/MainLayout';
 
-const { Content, Footer } = Layout;
+const { Content } = Layout;
 
 const App = () => {
   return (
     <React.StrictMode>
       <Router>
-        <Layout className="app-wrapper">
+        <MainLayout>
           <Sidebar />
-          <Layout>
-            <Header />
-            <Content className="content">
+          <Layout className="content">
+            <Content>
               <Route path={'/profile'} component={Profile} />
               <Route path={'/dialogs'} component={Dialogs} />
+              <Route path={'/users'} component={Users} />
               <Route path={'/news'} component={News} />
               <Route path={'/music'} component={Music} />
               <Route path={'/settings'} component={Settings} />
             </Content>
-            <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
           </Layout>
-        </Layout>
+        </MainLayout>
       </Router>
     </React.StrictMode>
   );

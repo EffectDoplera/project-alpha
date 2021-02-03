@@ -1,14 +1,27 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { UserOutlined } from '@ant-design/icons';
+import { Avatar, List } from 'antd';
+import { last } from 'lodash';
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 
-import classes from './Dialog.module.css'
+import classes from './Dialog.module.css';
 
 const Dialog = ({ name, id }) => {
-  return (
-    <div className={classes.dialog}>
-      <NavLink to={`/dialogs/${id}`}>{name}</NavLink>
-    </div>
-  )
-}
+  const messages = useSelector(state => state.dialogs.messages);
+  const { text } = last(messages);
 
-export default Dialog
+  return (
+    <NavLink to={ `/dialogs/${ id }` }>
+      <List.Item key={ id } className={ classes.dialog }>
+        <List.Item.Meta
+          avatar={ <Avatar size={ 64 } icon={ <UserOutlined /> } /> }
+          title={ name }
+          description={ text }
+        />
+      </List.Item>
+    </NavLink>
+  );
+};
+
+export default Dialog;

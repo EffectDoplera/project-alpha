@@ -1,4 +1,4 @@
-import { ADD_POST, UPDATE_NEW_POST_TEXT } from './../actions/posts';
+import { ADD_POST, UPDATE_NEW_POST_TEXT } from '../actions/posts';
 import { generate } from 'shortid';
 
 const initialState = {

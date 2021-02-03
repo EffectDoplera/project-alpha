@@ -1,7 +1,7 @@
 .app-wrapper {
   display: grid;
 
-  grid-template: 
+  grid-template:
   "header header"
   "side content";
   grid-template-rows: 60px 1fr;
@@ -10,5 +10,4 @@
 
 .content {
   grid-area: content;
-  background-color: cornflowerblue;
 }
