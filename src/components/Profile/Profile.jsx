@@ -6,9 +6,11 @@ import classes from './Profile.module.css'
 
 const Profile = () => {
   return (
-    <div>
-      <ProfileInfo />
-      <MyPostsContainer />
+    <div className={classes.profile}>
+      <div className={classes.content}>
+        <ProfileInfo />
+        <MyPostsContainer />
+      </div>
     </div>
   )
 }

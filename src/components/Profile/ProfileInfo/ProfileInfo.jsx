@@ -1,17 +1,17 @@
+import { Avatar, Image } from 'antd';
 import React from 'react'
 
-import classes from './Profile.module.css'
+import classes from './ProfileInfo.module.css'
+import intro from './../../../static/images/intro.jpg'
 
 const ProfileInfo = () => {
   return (
-    <div>
-      <div>
-        <img
-          src='https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg'
-          alt='intro'
-        />
+    <div className={classes.info}>
+      <Image src={intro} preview={false}/>
+      <div className={classes.bio}>
+        <Avatar size={80} />
+        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium dolorem eveniet exercitationem illum molestiae neque omnis quae recusandae totam ut.</div>
       </div>
-      <div className={classes.description}>ava + desc</div>
     </div>
   )
 }

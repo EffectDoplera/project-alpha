@@ -22,7 +22,7 @@ const Dialogs = () => {
   return (
     <div className={classes.dialogs}>
       <Contacts contacts={dialogs} />
-      <div>
+      <div className={classes.messenger}>
         <Messages messages={messages} />
         <Input.TextArea ref={newTextElement} />
         <Button onClick={sendMessage}>Send</Button>
