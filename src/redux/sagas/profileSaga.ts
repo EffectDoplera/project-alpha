@@ -1,17 +1,19 @@
-import { call, put, takeEvery } from 'redux-saga/effects';
-import { fetchProfileFailure } from '../actions/profileActions';
-import { fetchUsersSuccess } from '../actions/usersActions';
+import { call, put, take, fork } from '@redux-saga/core/effects';
+import { fetchProfileFailure, fetchProfileSuccess } from '../actions/profileActions';
 import {fetchProfile as fetchProfileApi} from './api';
 
-function* profileWorker(): any {
+function* profileWorker(payload: any): any {
   try {
-    const {data} = yield call(fetchProfileApi)
-    yield put(fetchUsersSuccess(data))
+    const {data} = yield call(fetchProfileApi, payload)
+    yield put(fetchProfileSuccess(data))
   } catch (error) {
     yield put(fetchProfileFailure(error))
   }
 }
 
 export function* profileWatcher() {
-  yield takeEvery('PROFILE_REQUEST', profileWorker)
+  while (true) {
+    const action = yield take('PROFILE_REQUEST')
+    yield fork(profileWorker, action.uid)
+  }
 }

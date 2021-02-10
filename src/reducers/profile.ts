@@ -5,16 +5,22 @@ import { Post } from '../types/post';
 export interface IProfileState {
   readonly id: string,
   readonly createdAt: string,
-  readonly name: string,
-  readonly avatar: string,
+  readonly firstName: string,
+  readonly surname: string,
+  readonly status: string,
+  readonly avatarUrl: string,
+  readonly introUrl: string,
   readonly posts: Post[]
 }
 
 const initialState: IProfileState = {
   id: '',
   createdAt: '',
-  name: '',
-  avatar: '',
+  firstName: '',
+  surname: '',
+  status: '',
+  avatarUrl: '',
+  introUrl: '',
   posts: [],
 };
 

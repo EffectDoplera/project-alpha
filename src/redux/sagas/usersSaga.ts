@@ -1,4 +1,4 @@
-import { call, put, takeEvery } from 'redux-saga/effects';
+import { call, put, takeEvery } from '@redux-saga/core/effects';
 import { fetchUsersFailure, fetchUsersSuccess } from '../actions/usersActions';
 import { fetchUsers as fetchUsersApi } from './api';
 

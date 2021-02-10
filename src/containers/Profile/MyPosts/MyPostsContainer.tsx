@@ -14,7 +14,9 @@ const MyPostsContainer = () => {
   });
 
   return (
-    <MyPosts posts={posts} newPostElement={newPostElement} addPost={addPost}/>
+    <>
+      {posts && <MyPosts posts={posts} newPostElement={newPostElement} addPost={addPost}/>}
+    </>
   )
 }
 
