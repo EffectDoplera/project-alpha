@@ -1,0 +1,17 @@
+.users {
+  display: grid;
+
+  grid-template: 'users info';
+  grid-template-columns: 2fr 10fr;
+}
+
+.usersList {
+  grid-area: users;
+  min-height: 100vh;
+  background: #240273;
+}
+
+.info {
+  grid-area: info;
+  align-self: center;
+}

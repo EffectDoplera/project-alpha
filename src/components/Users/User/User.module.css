@@ -1,0 +1,10 @@
+.user {
+  border-radius: 10px;
+  width: 320px;
+}
+
+.meta {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}

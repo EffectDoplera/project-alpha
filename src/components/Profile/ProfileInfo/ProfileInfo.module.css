@@ -1,0 +1,14 @@
+.info {
+  display: grid;
+  justify-content: center;
+}
+
+.bio {
+  display: grid;
+  justify-self: center;
+  justify-items: center;
+  align-items: center;
+  width: 600px;
+  text-align: center;
+  padding: 20px 0;
+}
