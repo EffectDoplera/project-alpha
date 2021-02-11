@@ -1,30 +1,19 @@
-import {Avatar, Image} from 'antd';
-import React from 'react';
+import React from 'react'
 
-import classes from './ProfileInfo.module.css';
-import intro from './../../../static/images/intro.jpg';
+import classes from './Profile.module.css'
 
-const ProfileInfo = ({
-  firstName = 'USER',
-  surname = 'USER',
-  introUrl = intro,
-  avatarUrl,
-  status = 'status',
-}) => {
+const ProfileInfo = () => {
   return (
-    <div className={classes.info}>
-      <Image src={introUrl} preview={false} />
-      <div className={classes.bio}>
-        <Avatar size={80} src={avatarUrl} />
-        <div>
-          <span>
-            {firstName} {surname}
-          </span>
-        </div>
-        <div>{status}</div>
+    <div>
+      <div>
+        <img
+          src='https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg'
+          alt='intro'
+        />
       </div>
+      <div className={classes.description}>ava + desc</div>
     </div>
-  );
-};
+  )
+}
 
-export default ProfileInfo;
+export default ProfileInfo

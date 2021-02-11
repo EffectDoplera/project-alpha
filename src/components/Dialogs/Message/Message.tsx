@@ -1,21 +1,22 @@
-import {Card, List} from 'antd';
-import React from 'react';
+import { Card, List } from 'antd';
+import React from 'react'
 
-import classes from './Message.module.css';
+import classes from './Message.module.css'
 
 export type IMessage = {
-  id: string;
-  text: string;
-};
+  id: string,
+  text: string
+}
 
-type MessageProps = IMessage;
+type MessageProps = IMessage
 
-const Message: React.FC<MessageProps> = ({text}) => (
-  <List.Item>
-    <Card bordered={false} className={classes.message}>
-      <p>{text}</p>
-    </Card>
-  </List.Item>
-);
+const Message:React.FC<MessageProps> = ({ text }) =>
+  (
+    <List.Item>
+      <Card bordered={ false } className={ classes.message }>
+        <p>{ text }</p>
+      </Card>
+    </List.Item>
+  )
 
-export default Message;
+export default Message

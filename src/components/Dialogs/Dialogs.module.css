@@ -1,8 +1,4 @@
 .dialogs {
   display: grid;
-  grid-template-columns: 4fr 8fr;
-}
-
-.messenger {
-  padding: 20px;
+  grid-template-columns: 2fr 3fr;
 }
