@@ -1,4 +1,4 @@
-import { combineReducers } from 'redux';
+import {combineReducers} from 'redux';
 
 import dialogsReducer from './dialogs';
 import profileReducer from './profile';

@@ -2,8 +2,7 @@
   display: grid;
   justify-content: center;
 
-  grid-template:
-  ". content .";
+  grid-template: '. content .';
   grid-template-columns: 2fr 8fr 2fr;
 }
 

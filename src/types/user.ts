@@ -4,4 +4,4 @@ export type User = {
   fullName: string;
   status: string;
   followed: boolean;
-}
+};

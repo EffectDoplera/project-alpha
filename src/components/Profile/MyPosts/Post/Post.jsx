@@ -1,11 +1,16 @@
-import React, { createElement, useState } from 'react';
-import { Comment, Tooltip, Avatar } from 'antd';
+import React, {createElement, useState} from 'react';
+import {Comment, Tooltip, Avatar} from 'antd';
 import moment from 'moment';
-import { DislikeOutlined, LikeOutlined, DislikeFilled, LikeFilled } from '@ant-design/icons';
+import {
+  DislikeOutlined,
+  LikeOutlined,
+  DislikeFilled,
+  LikeFilled,
+} from '@ant-design/icons';
 
 // import classes from './Post.module.css'
 
-const Post = ({ message }) => {
+const Post = ({message}) => {
   const [likes, setLikes] = useState(0);
   const [dislikes, setDislikes] = useState(0);
   const [action, setAction] = useState(null);
@@ -31,7 +36,9 @@ const Post = ({ message }) => {
     </Tooltip>,
     <Tooltip key="comment-basic-dislike" title="Dislike">
       <span onClick={dislike}>
-        {React.createElement(action === 'disliked' ? DislikeFilled : DislikeOutlined)}
+        {React.createElement(
+          action === 'disliked' ? DislikeFilled : DislikeOutlined
+        )}
         <span className="comment-action">{dislikes}</span>
       </span>
     </Tooltip>,
@@ -48,11 +55,7 @@ const Post = ({ message }) => {
           alt="Han Solo"
         />
       }
-      content={
-        <p>
-          {message}
-        </p>
-      }
+      content={<p>{message}</p>}
       datetime={
         <Tooltip title={moment().format('YYYY-MM-DD HH:mm:ss')}>
           <span>{moment().fromNow()}</span>
@@ -60,6 +63,6 @@ const Post = ({ message }) => {
       }
     />
   );
-}
+};
 
-export default Post
+export default Post;

@@ -1,6 +1,6 @@
-import { Button, Card, Space } from 'antd';
+import {Button, Card, Space} from 'antd';
 import Avatar from 'antd/es/avatar/avatar';
-import React from 'react';
+import React, {MouseEvent} from 'react';
 
 import classes from './User.module.css';
 
@@ -12,7 +12,13 @@ type UserProps = {
   clickHandler: any;
 };
 
-const User: React.FC<UserProps> = ({ id, photoUrl, fullName, followed, clickHandler }) => (
+const User: React.FC<UserProps> = ({
+  id,
+  photoUrl,
+  fullName,
+  followed,
+  clickHandler,
+}) => (
   <Card className={classes.user} hoverable={true}>
     <Card.Meta
       className={classes.meta}
@@ -20,7 +26,14 @@ const User: React.FC<UserProps> = ({ id, photoUrl, fullName, followed, clickHand
       title={fullName}
       description={
         <Space>
-          <Button type={'primary'} danger={followed} onClick={(event: any) => clickHandler(event.target.innerText, id)}>
+          <Button
+            type={'primary'}
+            danger={followed}
+            onClick={(event: MouseEvent<HTMLButtonElement>) =>
+              clickHandler(event.currentTarget.innerText, id)
+            }
+            //TODO: fix disabled logic
+            disabled={true}>
             {followed ? 'Unfollow' : 'Follow'}
           </Button>
           <Button>Remove</Button>

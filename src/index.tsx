@@ -1,8 +1,8 @@
-import { hot } from 'react-hot-loader/root';
+import {hot} from 'react-hot-loader/root';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom';
+import {Provider} from 'react-redux';
+import {BrowserRouter} from 'react-router-dom';
 
 import App from './App';
 
@@ -12,7 +12,7 @@ import './index.css';
 
 const AppWithStore = () => (
   <React.StrictMode>
-    <Provider store={ store }>
+    <Provider store={store}>
       <BrowserRouter>
         <App />
       </BrowserRouter>

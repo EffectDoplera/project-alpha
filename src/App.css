@@ -1,8 +1,7 @@
 .app-wrapper {
   display: grid;
 
-  grid-template:
-  "side content";
+  grid-template: 'side content';
   grid-template-columns: 2fr 10fr;
 }
 
